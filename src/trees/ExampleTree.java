@@ -80,18 +80,17 @@ class Tree {
                 if (value == currentNode.getValue()) {   // если такой элемент в дереве уже есть, не сохраняем его
                     return;                             // просто выходим из метода
                 } else if (value < currentNode.getValue()) {   // движение влево?
-                    currentNode = currentNode.getLeftChild();
-                    if (currentNode == null) { // если был достигнут конец цепочки,
-                        parentNode.setLeftChild(newNode); //  то вставить слева и выйти из методы
+                    if (currentNode.getLeftChild() == null) {   // если был достигнут конец цепочки,
+                        currentNode.setLeftChild(newNode); //  то вставить слева и выйти из методы
                         return;
                     }
-                }
-                else { // Или направо?
-                    currentNode = currentNode.getRightChild();
-                    if (currentNode == null) { // если был достигнут конец цепочки,
+                    currentNode = currentNode.getLeftChild();
+                } else { // Или направо?
+                    if (currentNode.getRightChild() == null) {   // если был достигнут конец цепочки,
                         parentNode.setRightChild(newNode);  //то вставить справа
                         return; // и выйти
                     }
+                    currentNode = currentNode.getRightChild();
                 }
             }
         }

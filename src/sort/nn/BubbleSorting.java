@@ -1,11 +1,14 @@
 package sort.nn;
 
+import java.util.Arrays;
+
 public class BubbleSorting {
 
     public static void main(String[] args) {
         int[] testArray = new int[]{3, 10, 1, 8, 2};
 
         bubbleSort(testArray);
+        System.out.println(Arrays.toString(testArray));
     }
 
     public static void bubbleSort(int[] arr) {
