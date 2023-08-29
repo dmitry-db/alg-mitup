@@ -11,11 +11,6 @@ public class MergeSorting {
                 Arrays.copyOfRange(arr, arr.length / 2, arr.length))));
     }
 
-    public static int[] sort(int[] arr) {
-        return mergeSort(Arrays.copyOfRange(arr, 0, arr.length / 2),
-                Arrays.copyOfRange(arr, arr.length / 2, arr.length));
-    }
-
     public static int[] mergeSort(int[] leftArr, int[] rightArr) {
         int[] sortLeftArr;
         int[] sortRightArr;
